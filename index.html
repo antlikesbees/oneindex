@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneIndex – Intelligent Document Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar">
+      <div class="navbar__inner">
+        <a href="#" class="navbar__logo">
+          <img src="logo.png" alt="OneIndex.ai" class="navbar__logo-img" />
+        </a>
+        <nav class="navbar__links">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#security">Security</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="navbar__cta">
+          <a href="#" class="btn btn--ghost">Sign In</a>
+          <a href="#" class="btn btn--primary">Get Started</a>
+        </div>
+        <button class="navbar__burger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">✕</button>
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#security">Security</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="btn btn--primary">Get Started</a>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="container hero__inner">
+        <div class="hero__badge">✦ Enterprise Document Intelligence</div> <!-- maybe change?-->
+        <h1 class="hero__headline">
+          Turn Messy Documents<br />              <!-- hero headline maybe also change-->
+          Into <span class="gradient-text">Actionable Intelligence</span>
+        </h1>
+        <p class="hero__sub">
+          Transforming messy enterprise documents into structured, searchable data and real-time insights. <!-- mission statement-->
+        </p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary btn--lg">Start for Free</a>
+          <a href="#how-it-works" class="btn btn--outline btn--lg">See How It Works →</a>
+        </div>
+        <p class="hero__disclaimer">No credit card required &nbsp;·&nbsp; SOC 2 Type II Certified</p>
+
+        <!-- Mock UI card -->
+        <div class="hero__mockup">
+          <div class="mockup__bar">
+            <span class="mockup__dot red"></span>
+            <span class="mockup__dot yellow"></span>
+            <span class="mockup__dot green"></span>
+            <span class="mockup__title">OneIndex — Invoice_Q3_2024.pdf</span>
+          </div>
+          <div class="mockup__body">
+            <div class="mockup__col mockup__col--doc">
+              <div class="mockup__doc-line long"></div>
+              <div class="mockup__doc-line medium"></div>
+              <div class="mockup__doc-line short"></div>
+              <div class="mockup__doc-line long"></div>
+              <div class="mockup__doc-line medium"></div>
+              <div class="mockup__doc-line short"></div>
+              <div class="mockup__doc-line long"></div>
+              <div class="mockup__doc-line medium"></div>
+            </div>
+            <div class="mockup__col mockup__col--arrow">→</div>
+            <div class="mockup__col mockup__col--data">
+              <div class="mockup__field">
+                <span class="mockup__label">Vendor</span>
+                <span class="mockup__value">Acme Corp</span>
+              </div>
+              <div class="mockup__field">
+                <span class="mockup__label">Invoice #</span>
+                <span class="mockup__value">INV-20240918</span>
+              </div>
+              <div class="mockup__field">
+                <span class="mockup__label">Amount</span>
+                <span class="mockup__value highlight">$48,250.00</span>
+              </div>
+              <div class="mockup__field">
+                <span class="mockup__label">Due Date</span>
+                <span class="mockup__value">Oct 15, 2024</span>
+              </div>
+              <div class="mockup__field">
+                <span class="mockup__label">Status</span>
+                <span class="mockup__value tag">Parsed ✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF STRIP ========== -->
+    <section class="social-proof">
+      <div class="container">
+        <p class="social-proof__label">Trusted by teams at</p>
+        <div class="social-proof__logos">
+          <span class="logo-pill">FinanceOS</span>
+          <span class="logo-pill">MedRecord</span>
+          <span class="logo-pill">LegalEdge</span>
+          <span class="logo-pill">SupplyFlow</span>
+          <span class="logo-pill">AuditPro</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Features</span>
+          <h2>Everything your documents need</h2>
+          <p>One platform to extract, structure, and act on information from any document type.</p>
+        </div>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">⚡</div>
+            <h3>Instant Extraction</h3>
+            <p>AI-powered parsing pulls structured data from PDFs, Word docs, emails, and scanned images in seconds.</p>
+          </div>
+          <div class="feature-card feature-card--accent">
+            <div class="feature-card__icon">🔍</div>
+            <h3>Semantic Search</h3>
+            <p>Ask natural language questions across your entire document library. Get precise answers instantly.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">📊</div>
+            <h3>Real-Time Insights</h3>
+            <p>Auto-generate dashboards and reports from your documents. Spot trends without writing a single query.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🔗</div>
+            <h3>Seamless Integrations</h3>
+            <p>Connect to Salesforce, SAP, SharePoint, and 50+ enterprise tools with one-click integrations.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🤖</div>
+            <h3>Custom AI Models</h3>
+            <p>Train extraction models specific to your document types — invoices, contracts, lab reports, and more.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🔒</div>
+            <h3>Enterprise Security</h3>
+            <p>End-to-end encryption, role-based access controls, and full audit trails built in from day one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">How It Works</span>
+          <h2>Three steps to clarity</h2>
+          <p>From raw document to structured insight in under a minute.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">01</div>
+            <div class="step__content">
+              <h3>Upload Any Document</h3>
+              <p>Drag and drop PDFs, images, emails, or Word files. OneIndex accepts virtually any format your team uses.</p>
+            </div>
+          </div>
+          <div class="step__connector">──────</div>
+          <div class="step">
+            <div class="step__num">02</div>
+            <div class="step__content">
+              <h3>AI Extracts &amp; Structures</h3>
+              <p>Our models identify fields, tables, and entities automatically — no templates or manual rules required.</p>
+            </div>
+          </div>
+          <div class="step__connector">──────</div>
+          <div class="step">
+            <div class="step__num">03</div>
+            <div class="step__content">
+              <h3>Search, Export &amp; Act</h3>
+              <p>Query your data in plain English, push to your systems, or trigger automated workflows instantly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECURITY / COMPLIANCE ========== -->
+    <section class="security" id="security">
+      <div class="container">
+        <div class="security__inner">
+          <div class="section-tag">Security &amp; Compliance</div>
+          <h2>Enterprise-grade trust, built in.</h2>
+          <p class="security__statement">
+            OneIndex is built on a zero-trust architecture with end-to-end encryption, strict data residency controls, and continuous compliance monitoring — so your sensitive documents stay exactly where they belong.
+          </p>
+          <div class="compliance__badges">
+            <div class="compliance__badge">
+              <div class="compliance__icon">🛡</div>
+              <span>GDPR</span>
+            </div>
+            <div class="compliance__badge">
+              <div class="compliance__icon">✅</div>
+              <span>SOC 2 Type II</span>
+            </div>
+            <div class="compliance__badge">
+              <div class="compliance__icon">🏥</div>
+              <span>HIPAA</span>
+            </div>
+            <div class="compliance__badge">
+              <div class="compliance__icon">🔐</div>
+              <span>ISO 27001</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="cta-banner">
+      <div class="container cta-banner__inner">
+        <h2>Ready to unlock your documents?</h2>
+        <p>Join forward-thinking teams already using OneIndex to eliminate manual data entry for good.</p>
+        <a href="#" class="btn btn--primary btn--lg">Get Early Access</a>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="contact">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="navbar__logo">
+            <img src="logo.png" alt="OneIndex.ai" class="navbar__logo-img navbar__logo-img--footer" />
+          </a>
+          <p>Transforming messy enterprise documents into structured, searchable data and real-time insights.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#">Pricing</a>
+            <a href="#">Changelog</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Security</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 OneIndex. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Sticky navbar shadow on scroll
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('navbar--scrolled', window.scrollY > 20);
+      });
+
+      // Mobile menu toggle
+      const burger = document.querySelector('.navbar__burger');
+      const mobileNav = document.getElementById('mobileNav');
+      const closeBtn = document.getElementById('mobileNavClose');
+
+      burger.addEventListener('click', () => mobileNav.classList.add('open'));
+      closeBtn.addEventListener('click', () => mobileNav.classList.remove('open'));
+      mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+    </script>
+  </body>
+</html>
