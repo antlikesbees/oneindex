@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OneIndex – Intelligent Document Intelligence</title>
+    <title>OneIndex</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +28,7 @@
         </nav>
         <div class="navbar__cta">
           <a href="#" class="btn btn--ghost">Sign In</a>
-          <a href="#" class="btn btn--primary">Get Started</a>
+          <a href="early-access.html" target="_blank" class="btn btn--primary">Get Early Access</a>
         </div>
         <button class="navbar__burger" aria-label="Open menu">
           <span></span><span></span><span></span>
@@ -36,14 +36,23 @@
       </div>
     </header>
 
-    <!-- Mobile nav drawer -->
+    <!-- mobile nav drawer -->
     <div class="mobile-nav" id="mobileNav">
-      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">✕</button>
-      <a href="#features">Features</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#security">Security</a>
-      <a href="#contact">Contact</a>
-      <a href="#" class="btn btn--primary">Get Started</a>
+      <div class="mobile-nav__header">
+        <a href="#" class="navbar__logo">
+          <img src="logo.png" alt="OneIndex.ai" class="navbar__logo-img" />
+        </a>
+        <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">✕</button>
+      </div>
+      <div class="mobile-nav__cta">
+        <a href="early-access.html" target="_blank" class="btn btn--primary">Get Early Access</a>
+      </div>
+      <nav class="mobile-nav__links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#security">Security</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
 
     <!-- ========== HERO ========== -->
@@ -52,19 +61,19 @@
       <div class="hero__orb hero__orb--1"></div>
       <div class="hero__orb hero__orb--2"></div>
       <div class="container hero__inner">
-        <div class="hero__badge">✦ Enterprise Document Intelligence</div> <!-- maybe change?-->
+        <div class="hero__badge">✦ Enterprise Document Intelligence</div>
         <h1 class="hero__headline">
-          Turn Messy Documents<br />              <!-- hero headline maybe also change-->
+          Turn Messy Documents<br />
           Into <span class="gradient-text">Actionable Intelligence</span>
         </h1>
         <p class="hero__sub">
-          Transforming messy enterprise documents into structured, searchable data and real-time insights. <!-- mission statement-->
+          Transforming messy enterprise documents into structured, searchable data and real-time insights.
         </p>
         <div class="hero__actions">
-          <a href="#" class="btn btn--primary btn--lg">Start for Free</a>
+          <a href="early-access.html" target="_blank" class="btn btn--primary btn--lg">Get Early Access</a>
           <a href="#how-it-works" class="btn btn--outline btn--lg">See How It Works →</a>
         </div>
-        <p class="hero__disclaimer">No credit card required &nbsp;·&nbsp; SOC 2 Type II Certified</p>
+        <p class="hero__disclaimer">No credit card required &nbsp;·&nbsp; SOC 2 Type II In Progress</p>
 
         <!-- Mock UI card -->
         <div class="hero__mockup">
@@ -118,11 +127,9 @@
       <div class="container">
         <p class="social-proof__label">Trusted by teams at</p>
         <div class="social-proof__logos">
-          <span class="logo-pill">FinanceOS</span>
-          <span class="logo-pill">MedRecord</span>
-          <span class="logo-pill">LegalEdge</span>
-          <span class="logo-pill">SupplyFlow</span>
-          <span class="logo-pill">AuditPro</span>
+          <span class="logo-pill">PE-backed HealthTech Company</span>
+          <span class="logo-pill">Venture-backed Health AI Company</span>
+          <span class="logo-pill">Global IT Company</span>
         </div>
       </div>
     </section>
@@ -141,7 +148,7 @@
             <h3>Instant Extraction</h3>
             <p>AI-powered parsing pulls structured data from PDFs, Word docs, emails, and scanned images in seconds.</p>
           </div>
-          <div class="feature-card feature-card--accent">
+          <div class="feature-card">
             <div class="feature-card__icon">🔍</div>
             <h3>Semantic Search</h3>
             <p>Ask natural language questions across your entire document library. Get precise answers instantly.</p>
@@ -154,7 +161,7 @@
           <div class="feature-card">
             <div class="feature-card__icon">🔗</div>
             <h3>Seamless Integrations</h3>
-            <p>Connect to Salesforce, SAP, SharePoint, and 50+ enterprise tools with one-click integrations.</p>
+            <p>Connect to Slack, email, and many other enterprise tools with one-click integration.</p>
           </div>
           <div class="feature-card">
             <div class="feature-card__icon">🤖</div>
@@ -186,7 +193,7 @@
               <p>Drag and drop PDFs, images, emails, or Word files. OneIndex accepts virtually any format your team uses.</p>
             </div>
           </div>
-          <div class="step__connector">──────</div>
+          <div class="step__connector"></div>
           <div class="step">
             <div class="step__num">02</div>
             <div class="step__content">
@@ -194,7 +201,7 @@
               <p>Our models identify fields, tables, and entities automatically — no templates or manual rules required.</p>
             </div>
           </div>
-          <div class="step__connector">──────</div>
+          <div class="step__connector"></div>
           <div class="step">
             <div class="step__num">03</div>
             <div class="step__content">
@@ -219,18 +226,22 @@
             <div class="compliance__badge">
               <div class="compliance__icon">🛡</div>
               <span>GDPR</span>
+              <span class="compliance__status">In Progress</span>
             </div>
             <div class="compliance__badge">
               <div class="compliance__icon">✅</div>
               <span>SOC 2 Type II</span>
+              <span class="compliance__status">In Progress</span>
             </div>
             <div class="compliance__badge">
               <div class="compliance__icon">🏥</div>
               <span>HIPAA</span>
+              <span class="compliance__status">In Progress</span>
             </div>
             <div class="compliance__badge">
               <div class="compliance__icon">🔐</div>
               <span>ISO 27001</span>
+              <span class="compliance__status">In Progress</span>
             </div>
           </div>
         </div>
@@ -242,7 +253,7 @@
       <div class="container cta-banner__inner">
         <h2>Ready to unlock your documents?</h2>
         <p>Join forward-thinking teams already using OneIndex to eliminate manual data entry for good.</p>
-        <a href="#" class="btn btn--primary btn--lg">Get Early Access</a>
+        <a href="early-access.html" target="_blank" class="btn btn--primary btn--lg">Get Early Access</a>
       </div>
     </section>
 
@@ -282,15 +293,12 @@
         <p>© 2026 OneIndex. All rights reserved.</p>
       </div>
     </footer>
-
     <script>
-      // Sticky navbar shadow on scroll
       const navbar = document.querySelector('.navbar');
       window.addEventListener('scroll', () => {
         navbar.classList.toggle('navbar--scrolled', window.scrollY > 20);
       });
 
-      // Mobile menu toggle
       const burger = document.querySelector('.navbar__burger');
       const mobileNav = document.getElementById('mobileNav');
       const closeBtn = document.getElementById('mobileNavClose');

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Early Access — OneIndex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --blue: #2563EB;
+        --purple: #7C3AED;
+        --purple-light: #A78BFA;
+        --grad: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+        --dark: #0F0F1A;
+        --mid: #4B5563;
+        --light: #F8FAFF;
+        --white: #FFFFFF;
+        --border: rgba(99,102,241,0.15);
+        --font-display: 'Plus Jakarta Sans', sans-serif;
+        --font-body: 'DM Sans', sans-serif;
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 24px;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: var(--font-body);
+        color: var(--dark);
+        background: var(--white);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      a { text-decoration: none; color: inherit; }
+      img { max-width: 100%; display: block; }
+
+      /* ── page layout ── */
+      .page {
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+      }
+
+      /* ── left panel ── */
+      .panel-left {
+        width: 42%;
+        background: var(--grad);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 48px 52px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+      .panel-left__logo img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        opacity: 0.95;
+      }
+      .panel-left__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+      }
+      .panel-left__tag {
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.7);
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 5px 14px;
+        border-radius: 100px;
+        width: fit-content;
+      }
+      .panel-left__headline {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1.2;
+      }
+      .panel-left__sub {
+        font-size: 1rem;
+        color: rgba(255,255,255,0.72);
+        line-height: 1.75;
+        max-width: 340px;
+      }
+      .panel-left__benefits {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 8px;
+      }
+      .benefit {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.92rem;
+        color: rgba(255,255,255,0.85);
+      }
+      .benefit__icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .panel-left__footer {
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.4);
+      }
+
+      /* ── right panel ── */
+      .panel-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 48px;
+        overflow-y: auto;
+      }
+      .form-wrap {
+        width: 100%;
+        max-width: 460px;
+      }
+      .form-wrap__title {
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+      .form-wrap__sub {
+        font-size: 0.95rem;
+        color: var(--mid);
+        margin-bottom: 36px;
+      }
+
+      /* form elements */
+      .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .form__group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+      .form__group label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--dark);
+        font-family: var(--font-display);
+      }
+      .required { color: var(--blue); }
+      .optional { font-weight: 400; color: var(--mid); font-size: 0.8rem; }
+      .form__group input,
+      .form__group select {
+        padding: 11px 14px;
+        border: 1.5px solid #E2E8F0;
+        border-radius: var(--radius-sm);
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--dark);
+        background: var(--white);
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        width: 100%;
+      }
+      .form__group input:focus,
+      .form__group select:focus {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+      }
+      .form__group input::placeholder { color: #9CA3AF; }
+      .form__error {
+        background: rgba(239,68,68,0.08);
+        border: 1px solid rgba(239,68,68,0.25);
+        color: #DC2626;
+        font-size: 0.88rem;
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        margin-bottom: 12px;
+        display: none;
+      }
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background: var(--grad);
+        color: var(--white);
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1rem;
+        border: none;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+        margin-top: 4px;
+      }
+      .btn-submit:hover {
+        opacity: 0.88;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(124,58,237,0.35);
+      }
+      .form__disclaimer {
+        font-size: 0.78rem;
+        color: #9CA3AF;
+        text-align: center;
+        margin-top: 14px;
+      }
+
+      /* success */
+      .success-state {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 40px 0;
+      }
+      .success-state__icon { font-size: 4rem; }
+      .success-state h2 {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--dark);
+      }
+      .success-state p { color: var(--mid); max-width: 320px; }
+      .success-state__back {
+        display: inline-block;
+        margin-top: 8px;
+        color: var(--blue);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+      .success-state__back:hover { text-decoration: underline; }
+
+      /* responsive  */
+      @media (max-width: 768px) {
+        .page { flex-direction: column; }
+        .panel-left {
+          width: 100%;
+          height: auto;
+          position: static;
+          padding: 36px 28px;
+        }
+        .panel-left__benefits { display: none; }
+        .panel-left__footer { display: none; }
+        .panel-left__content { gap: 16px; padding: 20px 0 8px; }
+        .panel-left__headline { font-size: 1.6rem; }
+        .panel-right { padding: 40px 24px; }
+        .form__row { grid-template-columns: 1fr; }
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .form-wrap { animation: fadeUp 0.5s ease both; }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- left brand panel -->
+      <div class="panel-left">
+        <div class="panel-left__logo">
+          <a href="index.html">
+            <img src="logo transparent .png" alt="OneIndex.ai" />
+          </a>
+        </div>
+        <div class="panel-left__content">
+          <span class="panel-left__tag">Early Access</span>
+          <h1 class="panel-left__headline">Be among the first to use OneIndex.</h1>
+          <p class="panel-left__sub">Transforming messy enterprise documents into structured, searchable data and real-time insights.</p>
+          <div class="panel-left__benefits">
+            <div class="benefit">
+              <div class="benefit__icon">⚡</div>
+              <span>Instant AI-powered document extraction</span>
+            </div>
+            <div class="benefit">
+              <div class="benefit__icon">🔍</div>
+              <span>Natural language search across all your docs</span>
+            </div>
+            <div class="benefit">
+              <div class="benefit__icon">🔗</div>
+              <span>One-click integration with Slack, email & more</span>
+            </div>
+            <div class="benefit">
+              <div class="benefit__icon">🔒</div>
+              <span>Enterprise-grade security from day one</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-left__footer">© 2026 OneIndex. All rights reserved.</div>
+      </div>
+
+      <!-- fight form panel -->
+      <div class="panel-right">
+        <div class="form-wrap">
+          <div id="formSection">
+            <h2 class="form-wrap__title">Request early access</h2>
+            <p class="form-wrap__sub">Fill in your details and we'll be in touch shortly.</p>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" placeholder="Jane" />
+              </div>
+              <div class="form__group">
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" placeholder="Smith" />
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="companyName">Company Name <span class="required">*</span></label>
+              <input type="text" id="companyName" placeholder="Acme Corp" />
+            </div>
+            <div class="form__group">
+              <label for="email">Work Email <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="jane@acme.com" />
+            </div>
+            <div class="form__group">
+              <label for="phone">Phone <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
+            </div>
+            <div class="form__group">
+              <label for="country">Country <span class="required">*</span></label>
+              <select id="country">
+                <option value="">Select your country…</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+                <option>Australia</option>
+                <option>Germany</option>
+                <option>France</option>
+                <option>India</option>
+                <option>Singapore</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form__error" id="formError"></div>
+            <button class="btn-submit" id="formSubmit">Request Access →</button>
+            <p class="form__disclaimer">No credit card required &nbsp;·&nbsp; We'll never spam you.</p>
+          </div>
+
+          <!-- success state -->
+          <div class="success-state" id="successState">
+            <div class="success-state__icon">🎉</div>
+            <h2>You're on the list!</h2>
+            <p>Thanks for your interest in OneIndex. We'll reach out soon with next steps.</p>
+            <span class="success-state__back" onclick="window.close()">← Back to OneIndex</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('formSubmit').addEventListener('click', () => {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName  = document.getElementById('lastName').value.trim();
+        const company   = document.getElementById('companyName').value.trim();
+        const email     = document.getElementById('email').value.trim();
+        const country   = document.getElementById('country').value;
+        const phone     = document.getElementById('phone').value.trim();
+        const errorEl   = document.getElementById('formError');
+
+        errorEl.style.display = 'none';
+
+        if (!firstName || !lastName || !company || !email || !country) {
+          errorEl.textContent = 'Please fill in all required fields.';
+          errorEl.style.display = 'block';
+          return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          errorEl.textContent = 'Please enter a valid email address.';
+          errorEl.style.display = 'block';
+          return;
+        }
+        if (phone) {
+          const phoneRegex = /^[\d\s\+\-\(\)]{7,20}$/;
+          if (!phoneRegex.test(phone)) {
+            errorEl.textContent = 'Please enter a valid phone number.';
+            errorEl.style.display = 'block';
+            return;
+          }
+        }
+
+        document.getElementById('formSection').style.display = 'none';
+        const s = document.getElementById('successState');
+        s.style.display = 'flex';
+      });
+    </script>
+  </body>
+</html>
