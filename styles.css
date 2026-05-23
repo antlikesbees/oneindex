@@ -530,7 +530,7 @@ img { max-width: 100%; display: block; }
   min-width: 130px;
 }
 .compliance__badge:hover { background: rgba(255,255,255,0.09); border-color: rgba(167,139,250,0.4); }
-.compliance__icon { font-size: 1.8rem; }
+.compliance__icon { font-size: 2.5rem; }
 .compliance__badge span {
   font-family: var(--font-display);
   font-weight: 700;
